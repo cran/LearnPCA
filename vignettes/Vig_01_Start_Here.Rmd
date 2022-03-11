@@ -13,7 +13,7 @@ output:
       number_sections: false
       css: vignette.css
 vignette: >
-    %\VignetteIndexEntry{LearnPCA 01: A Guide to Learning PCA with LearnPCA (Start Here)}
+    %\VignetteIndexEntry{Vignette 01: A Guide to Learning PCA with LearnPCA (Start Here)}
     %\VignetteKeywords{PCA}
     %\VignettePackage{LearnPCA}
     %\VignetteEngine{knitr::rmarkdown}

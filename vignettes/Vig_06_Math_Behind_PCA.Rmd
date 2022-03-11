@@ -14,7 +14,7 @@ output:
       mathjax: default
       css: vignette.css
 vignette: >
-    %\VignetteIndexEntry{LearnPCA 06: The Math Behind PCA}
+    %\VignetteIndexEntry{Vignette 06: The Math Behind PCA}
     %\VignetteKeywords{PCA}
     %\VignettePackage{LearnPCA}
     %\VignetteEngine{knitr::rmarkdown}
