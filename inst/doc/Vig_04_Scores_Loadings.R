@@ -2,7 +2,6 @@
 # R options & configuration:
 set.seed(13)
 suppressPackageStartupMessages(library("knitr"))
-suppressPackageStartupMessages(library("kableExtra"))
 suppressPackageStartupMessages(library("plotrix"))
 suppressPackageStartupMessages(library("latex2exp"))
 
@@ -58,7 +57,7 @@ variable1 = data_set_1$yrot
 samples = seq(1,8)
 df = data.frame(samples,variable1,variable2)
 colnames(df) = c("sample", "variable 1", "variable 2")
-kable(df, caption = "Individual values for the variables and samples.", digits = 2) %>% kable_styling(c("striped", "bordered"), full_width = FALSE)
+kable(df, caption = "Individual values for the variables and samples.", digits = 2)
 var2 = var(variable2)
 var1 = var(variable1)
 total_variance = var1 + var2
@@ -94,7 +93,7 @@ pc2<- c(pc2, 100*vpc2/(vpc1 + vpc2))
 # put it all together
 df = data.frame(samples,variable1,variable2,pc1, pc2)
 colnames(df) = c("sample", "variable 1", "variable 2", "PC 1", "PC 2")
-kable(df, caption = "Coordinates for each of the eight samples, in the original axis system and in the principal component axis system.", digits = 2) %>% kable_styling(c("striped", "bordered"), full_width = FALSE)
+kable(df, caption = "Coordinates for each of the eight samples, in the original axis system and in the principal component axis system.", digits = 2)
 
 ## ----rotate60-loadings, fig.align="center", fig.cap="Illustration showing the loadings for the first principal component axis."----
 plot_rot_axes(rotate60, show_loadings = TRUE, show_simple_legend = FALSE,

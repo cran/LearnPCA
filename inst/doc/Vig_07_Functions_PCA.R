@@ -3,7 +3,6 @@
 set.seed(123)
 suppressPackageStartupMessages(library("knitr"))
 suppressPackageStartupMessages(library("LearnPCA"))
-suppressPackageStartupMessages(library("kableExtra"))
 suppressPackageStartupMessages(library("xtable"))
 
 
@@ -127,7 +126,7 @@ colnames(DF) <- c("", "prcomp", "svd", "princomp", "eigen")
 
 ## ----SumTable, echo = FALSE, results = "asis"---------------------------------
 if (!is_latex_output()) {
-  kbl(DF, row.names = FALSE, caption = "A comparison of R functions for PCA.  Input data must be centered in all cases.  Scaling is optional.") %>% kable_styling(c("striped", "bordered"), full_width = FALSE)
+  kable(DF, row.names = FALSE, caption = "A comparison of R functions for PCA.  Input data must be centered in all cases.  Scaling is optional.")
 }
 
 if (is_latex_output()) {

@@ -2,7 +2,6 @@
 # R options & configuration:
 set.seed(9)
 suppressPackageStartupMessages(library("knitr"))
-suppressPackageStartupMessages(library("kableExtra"))
 suppressPackageStartupMessages(library("chemometrics"))
 suppressPackageStartupMessages(library("ChemoSpec"))
 
@@ -19,7 +18,7 @@ cat(res, sep = '\n')
 ## ----dataTaste, results = "asis"----------------------------------------------
 data(glass)
 DF <- as.data.frame(glass[1:5, 1:8])
-kable(DF, caption = "A portion of the archaeological glass data set. Values are percentages.") %>% kable_styling(c("striped", "bordered"))
+kable(DF, caption = "A portion of the archaeological glass data set. Values are percentages.")
 
 ## ----glassScree, fig.cap = "Scree plot from PCA on the glass data set."-------
 pca <- prcomp(glass)
@@ -36,7 +35,7 @@ barplot(pca$rotation[,1], cex.names = 0.7, ylab = "Contribution")
 tab <- cor(glass[,c(1, 4, 9)])
 
 DF <- as.data.frame(tab)
-kable(DF, digits = 2, caption = "Correlations among selected element concentrations in `glass` data set.") %>% kable_styling(c("striped", "bordered"), full_width = FALSE)
+kable(DF, digits = 2, caption = "Correlations among selected element concentrations in `glass` data set.")
 
 ## ----screeTable, results = "asis"---------------------------------------------
 eigensum <- sum(pca$sdev*pca$sdev)
@@ -44,7 +43,7 @@ variance <- 100*(pca$sdev*pca$sdev/eigensum)
 cumvariance <- cumsum(variance)
 labs <- paste("PC", 1:13, sep = " ")
 DF <- data.frame(component = labs, variance = variance, cumulative = cumvariance)
-kable(DF, digits = 0, caption = "Variance (signal) accounted for by PCs. Values in percent.") %>% kable_styling(c("striped", "bordered"), full_width = FALSE)
+kable(DF, digits = 0, caption = "Variance (signal) accounted for by PCs. Values in percent.")
 
 ## ----glassScores2, fig.cap = "Score plot from PCA on the glass data set, with groups color-coded.", fig.asp = 1----
 data(glass.grp)
@@ -59,7 +58,7 @@ plot(pca$x[,1], pca$x[,2], type = "p", col = glass.col, pch = 20,
 
 ## ----sumState, results = "asis"-----------------------------------------------
 x77 <- as.data.frame(apply(state.x77, 2, range))
-kable(x77, caption = "The ranges of variables in `state.x77`") %>% kable_styling(c("striped", "bordered"))
+kable(x77, caption = "The ranges of variables in `state.x77`")
 
 ## ----statePCA-----------------------------------------------------------------
 x77 <- prcomp(state.x77, scale = TRUE)
@@ -73,7 +72,7 @@ variance <- 100*(x77$sdev*x77$sdev/eigensum)
 cumvariance <- cumsum(variance)
 labs <- paste("PC", 1:8, sep = " ")
 DF <- data.frame(component = labs, variance = variance, cumulative = cumvariance)
-kable(DF, digits = 0, caption = "Variance accounted for by PCs. Values in percent.") %>% kable_styling(c("striped", "bordered"), full_width = FALSE)
+kable(DF, digits = 0, caption = "Variance accounted for by PCs. Values in percent.")
 
 ## ----stateScores, fig.cap = "Score plot from PCA on the `states.x77` data set, colored by political leanings (ligth blue = democrat, pink = republican, purple = mixed).", fig.asp = 1----
 state.col <- c(Col7[4], Col7[4], Col7[4], Col7[4], Col7[3], Col7[3], Col7[3], Col7[3], "purple", Col7[4], Col7[3], Col7[4], Col7[3], Col7[4], "purple", Col7[4], Col7[4], Col7[4], Col7[3], Col7[3], Col7[3], Col7[3], Col7[3], Col7[4], Col7[4], Col7[4], Col7[4], Col7[3], Col7[3], Col7[3], Col7[3], Col7[3], Col7[4], Col7[4], "purple", Col7[4], Col7[3], Col7[3], Col7[3], Col7[4], Col7[4], Col7[4], Col7[4], Col7[4], Col7[3], Col7[3], Col7[3], Col7[4], Col7[3], Col7[4])
