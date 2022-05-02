@@ -2,8 +2,8 @@ Package: LearnPCA
 Type: Package
 Title: Functions, Data Sets and Vignettes to Aid in Learning Principal
         Components Analysis (PCA)
-Version: 0.1.4
-Date: 2022-03-31
+Version: 0.2.0
+Date: 2022-05-01
 Authors@R: c(
     person("Bryan A.", "Hanson",
       role = c("aut", "cre"),
@@ -19,14 +19,14 @@ BugReports: https://github.com/bryanhanson/LearnPCA/issues
 ByteCompile: TRUE
 VignetteBuilder: knitr
 Encoding: UTF-8
-Suggests: ChemoSpec, chemometrics, knitr, tinytest, roxut, bookdown,
-        rmarkdown, plot3D, ade4, plotrix, latex2exp, plotly, xtable,
-        htmlwidgets
+Imports: markdown, shiny, stats, graphics
+Suggests: ChemoSpec, chemometrics, knitr, tinytest, roxut, rmarkdown,
+        plot3D, ade4, plotrix, latex2exp, plotly, xtable, bookdown,
 RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2022-03-31 16:10:30 UTC; bryanhanson
+Packaged: 2022-05-02 00:16:51 UTC; bryanhanson
 Author: Bryan A. Hanson [aut, cre] (<https://orcid.org/0000-0003-3536-8246>),
   David T. Harvey [aut]
 Maintainer: Bryan A. Hanson <hanson@depauw.edu>
 Repository: CRAN
-Date/Publication: 2022-03-31 17:00:02 UTC
+Date/Publication: 2022-05-02 02:30:02 UTC

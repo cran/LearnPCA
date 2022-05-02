@@ -16,7 +16,7 @@ cat(res, sep = '\n')
 
 ## ----PCA-Matrices, echo = FALSE, results = "show", fig.cap = "One way to look at the matrix algebra behind PCA. Reconstruction of the data matrix $\\mathbf{X}$ is achieved by multiplying the score matrix ($\\mathbf{S}$) by the transpose of the loadings matrix ($\\mathbf{L}$).  The method of matrix multiplication is symbolized in the red-dotted outlines: Each element of row $i$ of the scores matrix is multiplied by the corresponding element of column $j$ of the transposed loadings.  These results are summed to give a single entry in the original data matrix $\\mathbf{X}_{ij}$.", out.width = "75%", fig.align = "center"----
 
-knitr::include_graphics("Graphics/PCA_Matrices.png")
+knitr::include_graphics("PCA_Matrices.png")
 
 ## ----power1-------------------------------------------------------------------
 set.seed(30)

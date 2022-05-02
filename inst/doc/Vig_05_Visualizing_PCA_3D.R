@@ -93,7 +93,7 @@ rotdata <- rot()
 # pca results in case they are of interest
 pc_results <- prcomp(data.frame(rotdata$xrot, rotdata$yrot, rotdata$zrot))
 
-## ----origData, fig.cap=paste("Three-dimensional plot of data (", pcdata_colname, "points) showing the x, y, and z-axes (",xyzaxis_colname, "lines) that represent the three measured variables."), results = "show"----
+## ----origData, fig.cap=paste("Figure 1. Three-dimensional plot of data (", pcdata_colname, "points) showing the x, y, and z-axes (",xyzaxis_colname, "lines) that represent the three measured variables."), out.width = "80%", results = "show"----
 
 if (is_latex_output()) {
   # plot rotated data and original pc axes (original x,y,z)
@@ -136,12 +136,10 @@ if (!is_latex_output()) {
       yaxis = list(title = "y"),
       zaxis = list(title = "z")
     ))
-  htmlwidgets::saveWidget(as_widget(partial_bundle(fig)), "Graphics/origData.html",
-    knitrOptions = list(fig.cap=paste("Three-dimensional plot of data (", pcdata_colname, "points) showing the x, y, and z-axes (",xyzaxis_colname, "lines) that represent the three measured variables."), results = "show"))
-  include_url("Graphics/origData.html")
+fig
 }
 
-## ----bonus, fig.cap=paste("The original data (as", pcdata_colname, "points) and their projection onto the x,y-plane, the y,z-plane, and the x,z-plane (as", pcproj_colname," points).")----
+## ----bonus, fig.cap=paste("Bonus Figure (pdf version only). The original data (as", pcdata_colname, "points) and their projection onto the x,y-plane, the y,z-plane, and the x,z-plane (as", pcproj_colname," points).")----
 
 if (is_latex_output()) {
   scatter3D(
@@ -164,7 +162,7 @@ if (is_latex_output()) {
   )
 }
 
-## ----pc1b, fig.cap=paste("The original data (as", pcdata_colname, "points) and the first principal component axis (as a", pcaxis_colname, "line)."), results = "show"----
+## ----pc1b, fig.cap=paste("Figure 2. The original data (as", pcdata_colname, "points) and the first principal component axis (as a", pcaxis_colname, "line)."), results = "show", out.width = "80%"----
 
 if (is_latex_output()) {
   scatter3D(
@@ -191,12 +189,10 @@ if (!is_latex_output()) {
       yaxis = list(title = "y"),
       zaxis = list(title = "z")
     ))
-    htmlwidgets::saveWidget(as_widget(partial_bundle(fig)), "Graphics/pc1b.html",
-      knitrOptions = list(fig.cap=paste("The original data (as", pcdata_colname, "points) and the first principal component axis (as a", pcaxis_colname, "line)."), results = "show"))
-    include_url("Graphics/pc1b.html")
+  fig
 }
 
-## ----pc2a, fig.cap=paste("The first principal component (",pcaxis_colname, "line) and the projection of the original data (",pcdata_colname,"points) onto the plane perpendicular to the first principal component (shown with a", pcdata_colname, "boundary)."), results = "show"----
+## ----pc2a, fig.cap=paste("Figure 3. The first principal component (",pcaxis_colname, "line) and the projection of the original data (",pcdata_colname,"points) onto the plane perpendicular to the first principal component (shown with a", pcdata_colname, "boundary)."), results = "show", out.width = "80%"----
 
 if (is_latex_output()) {
   proj <- rot(x = rep(0, length(id)), y = ye, z = ze)
@@ -263,12 +259,10 @@ if (!is_latex_output()) {
       yaxis = list(title = "y"),
       zaxis = list(title = "z")
     ))
-    htmlwidgets::saveWidget(as_widget(partial_bundle(fig)), "Graphics/pc2a.html",
-      knitrOptions = list(fig.cap=paste("The first principal component (",pcaxis_colname, "line) and the projection of the original data (",pcdata_colname,"points) onto the plane perpendicular to the first principal component (shown with a", pcdata_colname, "boundary)."), results = "show"))
-    include_url("Graphics/pc2a.html")
+  fig
 }
 
-## ----pc2b, fig.cap=paste("The result of adding the second principal component axis to the previous figure. The first principal component axis is the solid", pcaxis_colname, "line and the second principal component axis is the dashed", pcaxis_colname, "line."), results = "show"----
+## ----pc2b, fig.cap=paste("Figure 4. The result of adding the second principal component axis to the previous figure. The first principal component axis is the solid", pcaxis_colname, "line and the second principal component axis is the dashed", pcaxis_colname, "line."), results = "show", out.width = "80%"----
 
 if (is_latex_output()) {
   scatter3D(
@@ -300,12 +294,10 @@ if (!is_latex_output()) {
       yaxis = list(title = "y"),
       zaxis = list(title = "z")
     ))
-    htmlwidgets::saveWidget(as_widget(partial_bundle(fig)), "Graphics/pc2b.html",
-      knitrOptions = list(fig.cap=paste("The result of adding the second principal component axis to the previous figure. The first principal component axis is the solid", pcaxis_colname, "line and the second principal component axis is the dashed", pcaxis_colname, "line."), results = "show"))
-    include_url("Graphics/pc2b.html")
+  fig
 }
 
-## ----pc3, fig.cap=paste("The original data (", pcdata_colname, "points) and the three three principal component axes (", pcaxis_colname, "lines). The solid line is the first principal component, the dashed line is the second principal component, and the dotted line is the third principal component."), results = "show"----
+## ----pc3, fig.cap=paste("Figure 5. The original data (", pcdata_colname, "points) and the three three principal component axes (", pcaxis_colname, "lines). The solid line is the first principal component, the dashed line is the second principal component, and the dotted line is the third principal component."), results = "show", out.width = "80%"----
 
 if (is_latex_output()) {
   scatter3D(
@@ -342,12 +334,10 @@ if (!is_latex_output()) {
       yaxis = list(title = "y"),
       zaxis = list(title = "z")
     ))
-    htmlwidgets::saveWidget(as_widget(partial_bundle(fig)), "Graphics/pc3.html",
-      knitrOptions = list(fig.cap=paste("The original data (", pcdata_colname, "points) and the three three principal component axes (", pcaxis_colname, "lines). The solid line is the first principal component, the dashed line is the second principal component, and the dotted line is the third principal component."), results = "show"))
-    include_url("Graphics/pc3.html")
+  fig
 }
 
-## ----dataClouds,  fig.height=8, fig.cap=paste("How the data (in", pcdata_colname, ") changes during PCA: (a) the original data in three dimensions; (b) the data after reducing to two dimensions; (c) the data after reducing to one dimension; (d) close up of (c) making it easier to see the individual data points. The", pcaxis_colname, "lines are the principal component axes at each step in the PCA analysis.")----
+## ----dataClouds, fig.width = 8, fig.asp = 1.0, fig.cap=paste("Figure 6. How the data (in", pcdata_colname, ") changes during PCA: (a) the original data in three dimensions; (b) the data after reducing to two dimensions; (c) the data after reducing to one dimension; (d) close up of (c) making it easier to see the individual data points. The", pcaxis_colname, "lines are the principal component axes at each step in the PCA analysis.")----
 old.par <- par(mfrow = c(2, 2))
 scatter3D(
   x = rotdata$xrot, y = rotdata$yrot, z = rotdata$zrot,
