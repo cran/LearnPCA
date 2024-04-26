@@ -8,10 +8,10 @@ suppressPackageStartupMessages(library("ChemoSpec"))
 # Stuff specifically for knitr:
 opts_chunk$set(eval = TRUE, echo = FALSE, results = "hide")
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 desc <- packageDescription("LearnPCA")
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("top_matter.md", quiet = TRUE)
 cat(res, sep = '\n')
 
@@ -112,7 +112,7 @@ abline(v = c(1743, 1708), lty = 2, col = "gray50")
 plot(SrE.IR$freq, pca$rotation[,1], type = "h", xlim = c(1800, 1650),
      xlab = "Wavelength", ylab = "Contribution")
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("refer_to_works_consulted.md", quiet = TRUE)
 cat(res, sep = '\n')
 

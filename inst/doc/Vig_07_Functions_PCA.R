@@ -9,10 +9,10 @@ suppressPackageStartupMessages(library("xtable"))
 # Stuff specifically for knitr:
 opts_chunk$set(eval = TRUE, echo = TRUE, results = "show")
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 desc <- packageDescription("LearnPCA")
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("top_matter.md", quiet = TRUE)
 cat(res, sep = '\n')
 
@@ -113,7 +113,7 @@ all.equal(abs(eig_scores), abs(prin$scores), check.attributes = FALSE)
 ## -----------------------------------------------------------------------------
 all.equal(abs(eig$vectors), abs(prin_loads), check.attributes = FALSE)
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 # c1 gives the row names
 c1 = c("algorithm", "input dimensions", "user pre-processing", "internal pre-processing", "call", "scores", "loadings", "pct variance explained")
 c2 = c("uses svd", "$n \\times p$", "center; scale", "center; scale", "$pca \\leftarrow prcomp(X)$", "$pca\\$x$", "$pca\\$rotation$", "$\\cfrac{100*pca\\$sdev^2}{sum(pca\\$sdev^2)}$")
@@ -141,7 +141,7 @@ if (is_latex_output()) {
     comment = FALSE)
 }
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("refer_to_works_consulted.md", quiet = TRUE)
 cat(res, sep = '\n')
 

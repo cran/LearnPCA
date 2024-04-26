@@ -10,10 +10,10 @@ suppressPackageStartupMessages(library("latex2exp"))
 # Stuff specifically for knitr:
 opts_chunk$set(eval = TRUE, echo = FALSE, results = "hide")
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 desc <- packageDescription("LearnPCA")
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("top_matter.md", quiet = TRUE)
 cat(res, sep = '\n')
 
@@ -113,7 +113,7 @@ plot(rmsd, type = "b", ylim = c(0.0, max(rmsd)),
   ylab = "Error")
 abline(h = 0.0, col = "pink")
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("refer_to_works_consulted.md", quiet = TRUE)
 cat(res, sep = '\n')
 

@@ -1,0 +1,64 @@
+---
+title:  "Notes/FAQ/Special Cases"
+author:
+  - David T. Harvey^[Professor of Chemistry & Biochemistry, DePauw University, Greencastle IN USA., harvey@depauw.edu]
+  - Bryan A. Hanson^[Professor Emeritus of Chemistry & Biochemistry, DePauw University, Greencastle IN USA., hanson@depauw.edu]
+date:  "`r Sys.Date()`"
+output:
+#    bookdown::html_document2: # use for pkgdown site
+      bookdown::pdf_document2: # use for CRAN to keep size down; breaks GHA
+      toc: yes
+      toc_depth: 2
+      fig_caption: yes
+      number_sections: false
+      css: vignette.css
+vignette: >
+    %\VignetteIndexEntry{Vignette 08: Notes}
+    %\VignetteKeywords{PCA}
+    %\VignettePackage{LearnPCA}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+#link-citations: yes
+#bibliography: PCA.bib
+#biblio-style: plain
+pkgdown:
+  as_is: true
+---
+
+
+```{r SetUp, echo = FALSE, eval = TRUE, results = "hide"}
+# R options & configuration:
+set.seed(123)
+suppressPackageStartupMessages(library("knitr"))
+suppressPackageStartupMessages(library("LearnPCA"))
+suppressPackageStartupMessages(library("xtable"))
+
+# Stuff specifically for knitr:
+opts_chunk$set(eval = TRUE, echo = TRUE, results = "show")
+```
+
+<!-- This chunk inserts common info about all the vignettes -->
+
+```{r, echo = FALSE, results = "asis"}
+res <- knitr::knit_child("top_matter.md", quiet = TRUE)
+cat(res, sep = '\n')
+```
+
+This vignette collects bits of information and answers to questions we have received from our readers, as well as some tips and warnings that may be useful.
+
+# Warning When Analyzing Time Series and Spatial Data
+[Shinn](https://www.pnas.org/doi/abs/10.1073/pnas.2311420120) reports that PCA on data which may be shifted in space or time can give "phantom oscillations" that don't exist in the data.  His context is neuroscience but one should be careful with this type of data.
+
+# Working with Nominal or Ordinal Response Data
+A reader asked if one should center ordinal survey responses, for instance responses on a 1-5 scale.  We didn't know the answer, but after some discussion and research we found there is an `R` package [Gifi](https://cran.r-project.org/web/packages/Gifi/index.html) designed for just this case.  There's also a tutorial [here](https://www.css.cornell.edu/faculty/dgr2/_static/files/R_html/NonlinearPCA.html).  Both of these resources use concepts published in a book by Gifi (1990).
+
+
+
+
+
+<!-- Insert refer_to_works_consulted document -->
+
+```{r, echo = FALSE, results = "asis"}
+res <- knitr::knit_child("refer_to_works_consulted.md", quiet = TRUE)
+cat(res, sep = '\n')
+```

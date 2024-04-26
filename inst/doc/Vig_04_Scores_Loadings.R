@@ -22,10 +22,10 @@ origdata_colname = "black"
 opts_chunk$set(eval = TRUE, echo = FALSE, results = "hide")
 opts_knit$set(eval.after = "fig.cap")
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 desc <- packageDescription("LearnPCA")
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("top_matter.md", quiet = TRUE)
 cat(res, sep = '\n')
 
@@ -100,7 +100,7 @@ plot_rot_axes(rotate60, show_loadings = TRUE, show_simple_legend = FALSE,
               show_full_legend = TRUE, show_full_axes_legend = FALSE,
               show_scores = TRUE, show_projections = TRUE)
 
-## ---- echo = FALSE, results = "asis"------------------------------------------
+## ----echo = FALSE, results = "asis"-------------------------------------------
 res <- knitr::knit_child("refer_to_works_consulted.md", quiet = TRUE)
 cat(res, sep = '\n')
 

@@ -19,7 +19,7 @@ xyzaxis_colname <- "black"
 opts_chunk$set(eval = TRUE, echo = FALSE, results = "hide")
 opts_knit$set(eval.after = "fig.cap")
 
-## ---- echo = FALSE------------------------------------------------------------
+## ----echo = FALSE-------------------------------------------------------------
 desc <- packageDescription("LearnPCA")
 
 ## ----top-matter, echo = FALSE, results = "asis"-------------------------------
